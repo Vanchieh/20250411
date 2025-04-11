@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品集選單與動畫</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 選單 -->
+  <ul class="menu">
+    <li>首頁</li>
+    <li>自我介紹</li>
+    <li class="dropdown">
+      作品集
+      <ul class="submenu">
+        <li onclick="loadIframe('https://hackmd.io/@Vanchieh/ryQvuPBqJg')">第一周</li>
+        <li onclick="loadIframe('https://hackmd.io/@Vanchieh/BJ3Oc6woyx')">第二周</li>
+        <li onclick="loadIframe('https://hackmd.io/@Vanchieh/BJ-XySq3yx')">第三周</li>
+        <li onclick="loadIframe('https://hackmd.io/@Vanchieh/SJbOytQa1e')">第四周</li>
+      </ul>
+    </li>
+    <li>測驗卷</li>
+    <li>教學影片</li>
+  </ul>
+
+  <!-- 嵌入的 iframe -->
+  <iframe id="content-frame" src="" frameborder="0"></iframe>
+
+  <!-- 動畫 -->
+  <script src="sketch.js"></script>
+  <script>
+    // 動態載入 iframe 的內容
+    function loadIframe(url) {
+      const iframe = document.getElementById('content-frame');
+      iframe.src = url;
+    }
+  </script>
+</body>
+</html>
